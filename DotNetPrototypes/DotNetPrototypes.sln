@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31912.275
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{FACB8E4B-E682-482F-BF76-88FD29BBF0FE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{9B8211EF-061F-4868-B13C-35D95B990B1F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{68A2F62E-FCA4-4D6D-B073-4ABACD8482A6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetPrototypes.API", "DotNetPrototypes.API\DotNetPrototypes.API.csproj", "{16512AFB-5CB7-41AF-9710-9EE817268A61}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{16512AFB-5CB7-41AF-9710-9EE817268A61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16512AFB-5CB7-41AF-9710-9EE817268A61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16512AFB-5CB7-41AF-9710-9EE817268A61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16512AFB-5CB7-41AF-9710-9EE817268A61}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{16512AFB-5CB7-41AF-9710-9EE817268A61} = {FACB8E4B-E682-482F-BF76-88FD29BBF0FE}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0E63D7DC-62F8-45AD-B1B0-A54DE4CDA4D8}
+	EndGlobalSection
+EndGlobal
