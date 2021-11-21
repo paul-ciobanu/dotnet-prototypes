@@ -5,4 +5,5 @@ namespace DotNetPrototypes.Core.Interfaces.Repositories;
 public interface IStudentRepository
 {
     Task<Guid> Add(Student student);
+    Task<List<Student>> GetAll();
 }

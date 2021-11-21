@@ -1,4 +1,6 @@
+using DotNetPrototypes.Core.Entities;
 using DotNetPrototypes.Core.UseCases.AddStudent;
+using DotNetPrototypes.Core.UseCases.GetAllStudents;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -18,12 +20,19 @@ public class StudentController : ControllerBase
     }
 
     [HttpPost]
-    public async Task Add()
+    public async Task<Guid> Add()
     {
         var command = new AddStudentCommand
         {
             Name = "test"
         };
-        await _mediator.Send(command);
+        return await _mediator.Send(command);
+    }
+
+    [HttpGet(Name = "GetAll")]
+    public async Task<List<Student>> GetAll()
+    {
+        var command = new GetAllStudentsCommand();
+        return await _mediator.Send(command);
     }
 }

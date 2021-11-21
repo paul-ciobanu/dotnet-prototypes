@@ -24,6 +24,7 @@ internal class StudentRepository : IStudentRepository
 
     public async Task<List<Student>> GetAll()
     {
-        throw new NotImplementedException();
+        var students = await _collection.Find(_ => true).ToListAsync();
+        return students;
     }
 }
