@@ -1,4 +1,3 @@
-using DotNetPrototypes.Core.Entities;
 using DotNetPrototypes.Core.UseCases.AddStudent;
 using DotNetPrototypes.Core.UseCases.GetAllStudents;
 using MediatR;
@@ -10,27 +9,23 @@ namespace DotNetPrototypes.API.Controllers;
 [Route("[controller]")]
 public class StudentController : ControllerBase
 {
-    private readonly ILogger<StudentController> _logger;
     private readonly IMediator _mediator;
 
-    public StudentController(ILogger<StudentController> logger, IMediator mediator)
+    public StudentController(IMediator mediator)
     {
-        _logger = logger;
         _mediator = mediator;
     }
 
     [HttpPost]
-    public async Task<Guid> Add()
+    public async Task<AddStudentResponse> Add([FromBody] AddStudentRequest data)
     {
-        var command = new AddStudentCommand
-        {
-            Name = "test"
-        };
+        var command = new AddStudentCommand { Data = data };
         return await _mediator.Send(command);
     }
 
-    [HttpGet(Name = "GetAll")]
-    public async Task<List<Student>> GetAll()
+    [HttpGet]
+    [Route("GetAll")]
+    public async Task<GetAllStudentsResponse> GetAll()
     {
         var command = new GetAllStudentsCommand();
         return await _mediator.Send(command);

@@ -2,7 +2,7 @@ using MediatR;
 
 namespace DotNetPrototypes.Core.UseCases.AddStudent;
 
-public class AddStudentCommand : IRequest<Guid>
+public class AddStudentCommand : IRequest<AddStudentResponse>
 {
-    public string? Name { get; init; }
+    public AddStudentRequest? Data { get; init; }
 }

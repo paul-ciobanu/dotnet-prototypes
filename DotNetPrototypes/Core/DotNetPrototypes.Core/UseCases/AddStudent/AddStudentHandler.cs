@@ -1,25 +1,29 @@
+using AutoMapper;
 using DotNetPrototypes.Core.Entities;
 using DotNetPrototypes.Core.Interfaces.Repositories;
 using MediatR;
 
 namespace DotNetPrototypes.Core.UseCases.AddStudent;
 
-internal class AddStudentHandler : IRequestHandler<AddStudentCommand, Guid>
+internal class AddStudentHandler : IRequestHandler<AddStudentCommand, AddStudentResponse>
 {
     private readonly IStudentRepository _studentRepository;
+    private readonly IMapper _mapper;
 
-    public AddStudentHandler(IStudentRepository studentRepository)
+    public AddStudentHandler(IStudentRepository studentRepository, IMapper mapper)
     {
         _studentRepository = studentRepository;
+        _mapper = mapper;
     }
 
-    public Task<Guid> Handle(AddStudentCommand request, CancellationToken cancellationToken)
+    public async Task<AddStudentResponse> Handle(AddStudentCommand request, CancellationToken cancellationToken)
     {
         var student = new Student
         {
             Id = Guid.NewGuid(),
-            Name = request.Name,
+            Name = request.Data?.Name,
         };
-        return _studentRepository.Add(student);
+        await _studentRepository.Add(student);
+        return _mapper.Map<AddStudentResponse>(student);
     }
 }

@@ -8,5 +8,6 @@ public static class ServiceConfiguration
     public static void ConfigureCoreServices(this IServiceCollection services)
     {
         services.AddMediatR(typeof(ServiceConfiguration));
+        services.AddAutoMapper(typeof(ServiceConfiguration));
     }
 }
