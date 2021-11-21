@@ -1,6 +1,5 @@
 using AutoMapper;
 using DotNetPrototypes.Core.Entities;
-using DotNetPrototypes.Core.Exceptions;
 using DotNetPrototypes.Core.Interfaces.Repositories;
 using MediatR;
 
@@ -20,9 +19,7 @@ internal class AddStudentHandler : IRequestHandler<AddStudentCommand, AddStudent
     public async Task<AddStudentResponse> Handle(AddStudentCommand request, CancellationToken cancellationToken)
     {
         var validator = new AddStudentRequestValidator();
-        var results = validator.Validate(request.Data);
-        if (results.Errors.Any())
-            throw new ValidationException("error validating payload", results.Errors.Select(e => e.ErrorMessage).ToList().AsReadOnly());
+        validator.Validate(request.Data);
 
         var student = new Student
         {
