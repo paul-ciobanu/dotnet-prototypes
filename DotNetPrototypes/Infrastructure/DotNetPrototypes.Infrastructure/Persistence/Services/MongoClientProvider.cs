@@ -8,7 +8,8 @@ internal class MongoClientProvider : IMongoClientProvider
 {
     public MongoClientProvider(IConfiguration configuration)
     {
-        Client = new MongoClient("");
+        var conn = configuration.GetConnectionString("MongoDB");
+        Client = new MongoClient(conn);
     }
 
     public IMongoClient Client { get; init; }
