@@ -1,23 +1,25 @@
 using DotNetPrototypes.Core.Entities;
+using DotNetPrototypes.Core.Interfaces.Repositories;
 using DotNetPrototypes.Infrastructure.Interfaces.Persistence.Services;
 using MongoDB.Driver;
 
 namespace DotNetPrototypes.Infrastructure.Persistence.Repositories;
 
-internal class StudentRepository
+internal class StudentRepository : IStudentRepository
 {
     private readonly IMongoDatabase _db;
     private readonly IMongoCollection<Student> _collection;
 
     public StudentRepository(IMongoClientProvider mongoClientProvider)
     {
-        _db = mongoClientProvider.Client.GetDatabase("schools");
+        _db = mongoClientProvider.Client.GetDatabase("students");
         _collection = _db.GetCollection<Student>("students");
     }
 
-    public async Task Add(Student student)
+    public async Task<Guid> Add(Student student)
     {
         await _collection.InsertOneAsync(student);
+        return student.Id;
     }
 
     public async Task<List<Student>> GetAll()
