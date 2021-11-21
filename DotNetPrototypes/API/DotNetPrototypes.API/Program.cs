@@ -1,6 +1,7 @@
 using DotNetPrototypes.API.Middleware;
 using DotNetPrototypes.Core;
 using DotNetPrototypes.Infrastructure;
+using FluentValidation.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,7 +14,9 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.ConfigureCoreServices();
 builder.Services.ConfigureInfrastructureServices();
+
 builder.Services.AddTransient<ExceptionHandlingMiddleware>();
+builder.Services.AddMvc().AddFluentValidation();
 
 var app = builder.Build();
 

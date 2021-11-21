@@ -1,6 +1,8 @@
-using System.ComponentModel.DataAnnotations;
+
+
 using System.Text.Json;
 using DotNetPrototypes.Core;
+using DotNetPrototypes.Core.Exceptions;
 
 namespace DotNetPrototypes.API.Middleware;
 
@@ -31,7 +33,7 @@ internal sealed class ExceptionHandlingMiddleware : IMiddleware
         {
             status = statusCode,
             detail = exception.Message,
-            //errors = GetErrors(exception)
+            errors = GetErrors(exception)
         };
 
         httpContext.Response.ContentType = "application/json";
@@ -46,19 +48,19 @@ internal sealed class ExceptionHandlingMiddleware : IMiddleware
         {
             //BadRequestException => StatusCodes.Status400BadRequest,
             NotFoundException => StatusCodes.Status404NotFound,
-            ValidationException => StatusCodes.Status422UnprocessableEntity,
+            ValidationException => StatusCodes.Status400BadRequest,
             _ => StatusCodes.Status500InternalServerError
         };
 
-    //private static IReadOnlyDictionary<string, string[]> GetErrors(Exception exception)
-    //{
-    //    IReadOnlyDictionary<string, string[]> errors = null;
+    private static IReadOnlyCollection<string> GetErrors(Exception exception)
+    {
+        IReadOnlyCollection<string> errors = null;
 
-    //    if (exception is ValidationException validationException)
-    //    {
-    //        errors = validationException.ErrorsDictionary;
-    //    }
+        if (exception is ValidationException validationException)
+        {
+            errors = validationException.Errors;
+        }
 
-    //    return errors;
-    //}
+        return errors;
+    }
 }
