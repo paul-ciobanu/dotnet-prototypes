@@ -1,3 +1,4 @@
+using DotNetPrototypes.API.Middleware;
 using DotNetPrototypes.Core;
 using DotNetPrototypes.Infrastructure;
 
@@ -12,6 +13,7 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.ConfigureCoreServices();
 builder.Services.ConfigureInfrastructureServices();
+builder.Services.AddTransient<ExceptionHandlingMiddleware>();
 
 var app = builder.Build();
 
@@ -21,6 +23,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseMiddleware<ExceptionHandlingMiddleware>();
 
 app.UseHttpsRedirection();
 

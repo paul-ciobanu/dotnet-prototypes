@@ -6,4 +6,5 @@ public interface IStudentRepository
 {
     Task<Guid> Add(Student student);
     Task<List<Student>> GetAll();
+    Task<Student> Delete(Guid studentId);
 }

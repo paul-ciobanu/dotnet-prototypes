@@ -22,6 +22,12 @@ internal class StudentRepository : IStudentRepository
         return student.Id;
     }
 
+    public async Task<Student> Delete(Guid studentId)
+    {
+        var student = await _collection.FindOneAndDeleteAsync(s => s.Id == studentId);
+        return student;
+    }
+
     public async Task<List<Student>> GetAll()
     {
         var students = await _collection.Find(_ => true).ToListAsync();

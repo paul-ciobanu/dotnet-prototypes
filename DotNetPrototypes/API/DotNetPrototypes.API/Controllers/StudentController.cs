@@ -1,4 +1,5 @@
 using DotNetPrototypes.Core.UseCases.AddStudent;
+using DotNetPrototypes.Core.UseCases.DeleteStudent;
 using DotNetPrototypes.Core.UseCases.GetAllStudents;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -20,6 +21,13 @@ public class StudentController : ControllerBase
     public async Task<AddStudentResponse> Add([FromBody] AddStudentRequest data)
     {
         var command = new AddStudentCommand { Data = data };
+        return await _mediator.Send(command);
+    }
+
+    [HttpDelete]
+    public async Task<DeleteStudentResponse> Delete([FromBody] DeleteStudentRequest data)
+    {
+        var command = new DeleteStudentCommand { Data = data };
         return await _mediator.Send(command);
     }
 
