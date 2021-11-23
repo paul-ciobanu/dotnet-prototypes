@@ -10,6 +10,12 @@ internal static class ServiceConfiguration
     public static void Configure(this IServiceCollection services)
     {
         services.AddControllers();
+
+        services.AddApiVersioning(options =>
+        {
+            options.AssumeDefaultVersionWhenUnspecified = true;
+        });
+
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
         services.AddEndpointsApiExplorer();
         services.AddSwaggerGen();
