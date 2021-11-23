@@ -1,7 +1,10 @@
+using DotNetPrototypes.API.Configuration.Swagger;
 using DotNetPrototypes.API.Middleware;
 using DotNetPrototypes.Core;
 using DotNetPrototypes.Infrastructure;
 using FluentValidation.AspNetCore;
+using Microsoft.Extensions.Options;
+using Swashbuckle.AspNetCore.SwaggerGen;
 
 namespace DotNetPrototypes.API.Configuration;
 
@@ -18,7 +21,12 @@ internal static class ServiceConfiguration
 
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
         services.AddEndpointsApiExplorer();
-        services.AddSwaggerGen();
+        services.AddVersionedApiExplorer(options => options.GroupNameFormat = "'v'VVV");
+        services.AddTransient<IConfigureOptions<SwaggerGenOptions>, ConfigureSwaggerOptions>();
+        services.AddSwaggerGen(options =>
+        {
+            options.OperationFilter<SwaggerDefaultValues>();
+        });
 
         services.ConfigureCoreServices();
         services.ConfigureInfrastructureServices();

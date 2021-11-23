@@ -1,4 +1,5 @@
 using DotNetPrototypes.API.Middleware;
+using Microsoft.AspNetCore.Mvc.ApiExplorer;
 
 namespace DotNetPrototypes.API.Configuration;
 
@@ -9,8 +10,19 @@ internal static class AppConfiguration
         // Configure the HTTP request pipeline.
         if (app.Environment.IsDevelopment())
         {
+            var provider = app.Services.GetService<IApiVersionDescriptionProvider>();
+
             app.UseSwagger();
-            app.UseSwaggerUI();
+            app.UseSwaggerUI(
+                options =>
+                {
+                    foreach (var description in provider.ApiVersionDescriptions)
+                    {
+                        options.SwaggerEndpoint(
+                            $"/swagger/{description.GroupName}/swagger.json",
+                            description.GroupName.ToUpperInvariant());
+                    }
+                });
         }
 
         app.UseMiddleware<ExceptionHandlingMiddleware>();
