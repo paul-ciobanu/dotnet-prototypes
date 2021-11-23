@@ -16,5 +16,8 @@ internal class MappingProfile : Profile
         CreateMap<Student, DeleteStudentResponse>();
 
         CreateMap<Event, GetEventResponse>();
+        CreateMap<Event, UseCases.GetEvent.V2.GetEventResponse>()
+            .ForMember(dest => dest.EventId, opt => opt.MapFrom(src => src.Id))
+            .ForMember(dest => dest.EventName, opt => opt.MapFrom(src => src.Name));
     }
 }
