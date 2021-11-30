@@ -1,4 +1,4 @@
-using DotNetPrototypes.Core.UseCases.GetEvent;
+using DotNetPrototypes.Core.UseCases.Events.GetEvent;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 

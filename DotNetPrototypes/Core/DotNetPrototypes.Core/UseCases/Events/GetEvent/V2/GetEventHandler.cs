@@ -2,7 +2,7 @@ using AutoMapper;
 using DotNetPrototypes.Core.Entities;
 using MediatR;
 
-namespace DotNetPrototypes.Core.UseCases.GetEvent.V2;
+namespace DotNetPrototypes.Core.UseCases.Events.GetEvent.V2;
 
 internal class GetEventHandler : IRequestHandler<GetEventQuery, GetEventResponse>
 {

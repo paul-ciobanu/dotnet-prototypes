@@ -1,4 +1,4 @@
-namespace DotNetPrototypes.Core.UseCases.GetEvent;
+namespace DotNetPrototypes.Core.UseCases.Events.GetEvent;
 
 public class GetEventResponse
 {

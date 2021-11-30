@@ -1,6 +1,6 @@
 using MediatR;
 
-namespace DotNetPrototypes.Core.UseCases.GetEvent.V2;
+namespace DotNetPrototypes.Core.UseCases.Events.GetEvent;
 
 public class GetEventQuery : IRequest<GetEventResponse>
 {
