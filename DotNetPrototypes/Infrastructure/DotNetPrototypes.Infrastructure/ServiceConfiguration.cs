@@ -12,5 +12,7 @@ public static class ServiceConfiguration
     {
         services.AddSingleton<IMongoClientProvider, MongoClientProvider>();
         services.AddScoped<IStudentRepository, StudentRepository>();
+
+        services.AddScoped<ICoolerRepository, CoolerRepository>();
     }
 }
