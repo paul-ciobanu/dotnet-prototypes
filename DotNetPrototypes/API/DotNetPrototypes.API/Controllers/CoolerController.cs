@@ -1,5 +1,5 @@
-using DotNetPrototypes.Core.UseCases.Cooler.AddCooler;
-using DotNetPrototypes.Core.UseCases.Cooler.GetAllCoolers;
+using DotNetPrototypes.Core.UseCases.Coolers.AddCooler;
+using DotNetPrototypes.Core.UseCases.Coolers.GetAllCoolers;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 

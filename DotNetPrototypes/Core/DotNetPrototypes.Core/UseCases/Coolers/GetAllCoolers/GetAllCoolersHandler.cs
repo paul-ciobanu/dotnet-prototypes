@@ -2,7 +2,7 @@ using AutoMapper;
 using DotNetPrototypes.Core.Interfaces.Repositories;
 using MediatR;
 
-namespace DotNetPrototypes.Core.UseCases.Cooler.GetAllCoolers;
+namespace DotNetPrototypes.Core.UseCases.Coolers.GetAllCoolers;
 
 internal class GetAllCoolersHandler : IRequestHandler<GetAllCoolersCommand, GetAllCoolersResponse>
 {

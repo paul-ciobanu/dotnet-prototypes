@@ -1,6 +1,6 @@
 using FluentValidation;
 
-namespace DotNetPrototypes.Core.UseCases.Cooler.AddCooler;
+namespace DotNetPrototypes.Core.UseCases.Coolers.AddCooler;
 
 public class AddCoolerRequestValidator : CustomAbstractValidator<AddCoolerRequest>
 {

@@ -2,7 +2,7 @@ using AutoMapper;
 using DotNetPrototypes.Core.Interfaces.Repositories;
 using MediatR;
 
-namespace DotNetPrototypes.Core.UseCases.Cooler.AddCooler;
+namespace DotNetPrototypes.Core.UseCases.Coolers.AddCooler;
 
 internal class AddCoolerHandler : IRequestHandler<AddCoolerCommand, AddCoolerResponse>
 {

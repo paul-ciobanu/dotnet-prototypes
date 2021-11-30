@@ -1,4 +1,4 @@
-namespace DotNetPrototypes.Core.UseCases.Cooler.GetAllCoolers;
+namespace DotNetPrototypes.Core.UseCases.Coolers.GetAllCoolers;
 
 public record struct GetAllCoolersResponse(List<CoolerDto> Coolers);
 

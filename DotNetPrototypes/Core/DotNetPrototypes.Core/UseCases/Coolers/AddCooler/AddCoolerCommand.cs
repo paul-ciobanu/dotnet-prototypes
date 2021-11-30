@@ -1,6 +1,6 @@
 using MediatR;
 
-namespace DotNetPrototypes.Core.UseCases.Cooler.AddCooler;
+namespace DotNetPrototypes.Core.UseCases.Coolers.AddCooler;
 
 public class AddCoolerCommand : IRequest<AddCoolerResponse>
 {

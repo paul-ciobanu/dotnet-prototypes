@@ -1,8 +1,8 @@
 using AutoMapper;
 using DotNetPrototypes.Core.Entities;
 using DotNetPrototypes.Core.UseCases.AddStudent;
-using DotNetPrototypes.Core.UseCases.Cooler.AddCooler;
-using DotNetPrototypes.Core.UseCases.Cooler.GetAllCoolers;
+using DotNetPrototypes.Core.UseCases.Coolers.AddCooler;
+using DotNetPrototypes.Core.UseCases.Coolers.GetAllCoolers;
 using DotNetPrototypes.Core.UseCases.DeleteStudent;
 using DotNetPrototypes.Core.UseCases.GetAllStudents;
 using DotNetPrototypes.Core.UseCases.GetEvent;
