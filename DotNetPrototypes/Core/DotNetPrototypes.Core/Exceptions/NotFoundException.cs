@@ -1,4 +1,4 @@
-namespace DotNetPrototypes.Core;
+namespace DotNetPrototypes.Core.Exceptions;
 
 public class NotFoundException : ApplicationException
 {

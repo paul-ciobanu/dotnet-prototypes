@@ -1,4 +1,5 @@
 using AutoMapper;
+using DotNetPrototypes.Core.Exceptions;
 using DotNetPrototypes.Core.Interfaces.Repositories;
 using MediatR;
 

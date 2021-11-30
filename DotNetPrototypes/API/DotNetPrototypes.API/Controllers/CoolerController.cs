@@ -1,4 +1,5 @@
 using DotNetPrototypes.Core.UseCases.Cooler.AddCooler;
+using DotNetPrototypes.Core.UseCases.Cooler.GetAllCoolers;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -19,6 +20,14 @@ public class CoolerController : ControllerBase
     public async Task<AddCoolerResponse> Add([FromBody] AddCoolerRequest data)
     {
         var command = new AddCoolerCommand { Data = data };
+        return await _mediator.Send(command);
+    }
+
+    [HttpGet]
+    [Route("GetAll")]
+    public async Task<GetAllCoolersResponse> GetAll()
+    {
+        var command = new GetAllCoolersCommand();
         return await _mediator.Send(command);
     }
 }

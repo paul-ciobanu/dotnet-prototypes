@@ -21,4 +21,13 @@ internal class CoolerRepository : ICoolerRepository
         var result = await connection.ExecuteScalarAsync(sql, student);
         return Guid.Parse(result.ToString());
     }
+
+    public async Task<Cooler[]> GetAll()
+    {
+        using var connection = _context.CreateConnection();
+
+        string sql = "SELECT * FROM Coolers";
+        var allCoolers = await connection.QueryAsync<Cooler>(sql);
+        return allCoolers.ToArray();
+    }
 }

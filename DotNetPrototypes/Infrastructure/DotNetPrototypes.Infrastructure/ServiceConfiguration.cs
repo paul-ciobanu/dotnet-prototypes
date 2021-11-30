@@ -1,5 +1,4 @@
 using DotNetPrototypes.Core.Interfaces.Repositories;
-using DotNetPrototypes.Infrastructure.Interfaces.Persistence.Services;
 using DotNetPrototypes.Infrastructure.Persistence;
 using DotNetPrototypes.Infrastructure.Persistence.Repositories;
 using DotNetPrototypes.Infrastructure.Persistence.Services;

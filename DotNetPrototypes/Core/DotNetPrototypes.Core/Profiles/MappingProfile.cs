@@ -2,6 +2,7 @@ using AutoMapper;
 using DotNetPrototypes.Core.Entities;
 using DotNetPrototypes.Core.UseCases.AddStudent;
 using DotNetPrototypes.Core.UseCases.Cooler.AddCooler;
+using DotNetPrototypes.Core.UseCases.Cooler.GetAllCoolers;
 using DotNetPrototypes.Core.UseCases.DeleteStudent;
 using DotNetPrototypes.Core.UseCases.GetAllStudents;
 using DotNetPrototypes.Core.UseCases.GetEvent;
@@ -22,5 +23,6 @@ internal class MappingProfile : Profile
             .ForMember(dest => dest.EventName, opt => opt.MapFrom(src => src.Name));
 
         CreateMap<Cooler, AddCoolerResponse>();
+        CreateMap<Cooler, CoolerDto>();
     }
 }

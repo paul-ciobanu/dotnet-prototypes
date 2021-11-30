@@ -1,6 +1,6 @@
 using MongoDB.Driver;
 
-namespace DotNetPrototypes.Infrastructure.Interfaces.Persistence.Services;
+namespace DotNetPrototypes.Infrastructure.Persistence.Services;
 
 public interface IMongoClientProvider
 {
