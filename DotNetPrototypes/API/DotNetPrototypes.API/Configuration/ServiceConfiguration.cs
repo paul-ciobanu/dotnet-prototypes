@@ -10,7 +10,7 @@ namespace DotNetPrototypes.API.Configuration;
 
 internal static class ServiceConfiguration
 {
-    public static void Configure(this IServiceCollection services)
+    public static void Configure(this IServiceCollection services, IConfiguration configuration)
     {
         services.AddControllers();
 
@@ -29,7 +29,7 @@ internal static class ServiceConfiguration
         });
 
         services.ConfigureCoreServices();
-        services.ConfigureInfrastructureServices();
+        services.ConfigureInfrastructureServices(configuration);
 
         services.AddTransient<ExceptionHandlingMiddleware>();
         services.AddMvc().AddFluentValidation();

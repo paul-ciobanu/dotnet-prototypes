@@ -1,4 +1,5 @@
 using DotNetPrototypes.API.Middleware;
+using DotNetPrototypes.Infrastructure;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
 
 namespace DotNetPrototypes.API.Configuration;
@@ -7,6 +8,8 @@ internal static class AppConfiguration
 {
     public static void Configure(this WebApplication app)
     {
+        app.Services.MigrateDatabases();
+
         // Configure the HTTP request pipeline.
         if (app.Environment.IsDevelopment())
         {

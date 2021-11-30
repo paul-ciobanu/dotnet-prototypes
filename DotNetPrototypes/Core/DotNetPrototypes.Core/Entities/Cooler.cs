@@ -1,3 +1,8 @@
 namespace DotNetPrototypes.Core.Entities;
 
-public record struct Cooler(Guid Id, string Name, int Rpm);
+public class Cooler
+{
+    public Guid Id { get; set; }
+    public string Name { get; set; }
+    public int Rpm { get; set; }
+}

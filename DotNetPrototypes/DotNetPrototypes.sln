@@ -13,7 +13,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetPrototypes.API", "API
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetPrototypes.Core", "Core\DotNetPrototypes.Core\DotNetPrototypes.Core.csproj", "{18725558-CBEE-40A7-B640-6CAF475CBD94}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetPrototypes.Infrastructure", "Infrastructure\DotNetPrototypes.Infrastructure\DotNetPrototypes.Infrastructure.csproj", "{7F652647-3173-478B-9731-F5F6F2BF7AE0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetPrototypes.Infrastructure", "Infrastructure\DotNetPrototypes.Infrastructure\DotNetPrototypes.Infrastructure.csproj", "{7F652647-3173-478B-9731-F5F6F2BF7AE0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{92F52B22-4838-4931-8C2D-7CD662B66A18}"
+	ProjectSection(SolutionItems) = preProject
+		..\docker-compose.yaml = ..\docker-compose.yaml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

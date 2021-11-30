@@ -20,13 +20,12 @@ internal class AddCoolerHandler : IRequestHandler<AddCoolerCommand, AddCoolerRes
         var validator = new AddCoolerRequestValidator();
         validator.Validate(request.Data);
 
-        var student = new Entities.Cooler
+        var cooler = new Entities.Cooler
         {
-            Id = Guid.NewGuid(),
             Name = request.Data.Name,
             Rpm = request.Data.Rpm
         };
-        await _coolerRepository.Add(student);
-        return _mapper.Map<AddCoolerResponse>(student);
+        cooler.Id = await _coolerRepository.Add(cooler);
+        return _mapper.Map<AddCoolerResponse>(cooler);
     }
 }

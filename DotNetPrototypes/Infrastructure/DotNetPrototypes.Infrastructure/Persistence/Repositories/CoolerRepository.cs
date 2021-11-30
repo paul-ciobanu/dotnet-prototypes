@@ -1,3 +1,4 @@
+using Dapper;
 using DotNetPrototypes.Core.Entities;
 using DotNetPrototypes.Core.Interfaces.Repositories;
 
@@ -5,12 +6,19 @@ namespace DotNetPrototypes.Infrastructure.Persistence.Repositories;
 
 internal class CoolerRepository : ICoolerRepository
 {
-    public CoolerRepository()
+    private readonly DapperContext _context;
+
+    public CoolerRepository(DapperContext context)
     {
+        _context = context;
     }
 
-    public Task<Guid> Add(Cooler student)
+    public async Task<Guid> Add(Cooler student)
     {
-        throw new NotImplementedException();
+        using var connection = _context.CreateConnection();
+
+        string sql = "INSERT INTO Coolers (Name, Rpm) OUTPUT Inserted.Id Values (@Name, @Rpm) ;";
+        var result = await connection.ExecuteScalarAsync(sql, student);
+        return Guid.Parse(result.ToString());
     }
 }
