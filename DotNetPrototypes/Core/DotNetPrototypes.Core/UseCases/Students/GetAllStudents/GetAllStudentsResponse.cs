@@ -1,4 +1,4 @@
-namespace DotNetPrototypes.Core.UseCases.GetAllStudents;
+namespace DotNetPrototypes.Core.UseCases.Students.GetAllStudents;
 
 public class GetAllStudentsResponse
 {

@@ -3,7 +3,7 @@ using DotNetPrototypes.Core.Exceptions;
 using DotNetPrototypes.Core.Interfaces.Repositories;
 using MediatR;
 
-namespace DotNetPrototypes.Core.UseCases.DeleteStudent;
+namespace DotNetPrototypes.Core.UseCases.Students.DeleteStudent;
 
 internal class DeleteStudentHandler : IRequestHandler<DeleteStudentCommand, DeleteStudentResponse>
 {

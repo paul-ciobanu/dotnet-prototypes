@@ -1,6 +1,6 @@
-using DotNetPrototypes.Core.UseCases.AddStudent;
-using DotNetPrototypes.Core.UseCases.DeleteStudent;
-using DotNetPrototypes.Core.UseCases.GetAllStudents;
+using DotNetPrototypes.Core.UseCases.Students.AddStudent;
+using DotNetPrototypes.Core.UseCases.Students.DeleteStudent;
+using DotNetPrototypes.Core.UseCases.Students.GetAllStudents;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 

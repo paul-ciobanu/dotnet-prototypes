@@ -3,7 +3,7 @@ using DotNetPrototypes.Core.Entities;
 using DotNetPrototypes.Core.Interfaces.Repositories;
 using MediatR;
 
-namespace DotNetPrototypes.Core.UseCases.AddStudent;
+namespace DotNetPrototypes.Core.UseCases.Students.AddStudent;
 
 internal class AddStudentHandler : IRequestHandler<AddStudentCommand, AddStudentResponse>
 {

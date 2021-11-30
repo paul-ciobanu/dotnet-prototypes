@@ -1,4 +1,4 @@
-namespace DotNetPrototypes.Core.UseCases.AddStudent;
+namespace DotNetPrototypes.Core.UseCases.Students.AddStudent;
 
 public class AddStudentResponse
 {

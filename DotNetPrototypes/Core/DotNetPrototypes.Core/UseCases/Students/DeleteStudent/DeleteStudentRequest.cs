@@ -1,4 +1,4 @@
-namespace DotNetPrototypes.Core.UseCases.DeleteStudent;
+namespace DotNetPrototypes.Core.UseCases.Students.DeleteStudent;
 
 public class DeleteStudentRequest
 {

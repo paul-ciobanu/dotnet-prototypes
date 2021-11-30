@@ -2,7 +2,7 @@ using AutoMapper;
 using DotNetPrototypes.Core.Interfaces.Repositories;
 using MediatR;
 
-namespace DotNetPrototypes.Core.UseCases.GetAllStudents;
+namespace DotNetPrototypes.Core.UseCases.Students.GetAllStudents;
 
 internal class GetAllStudentsHandler : IRequestHandler<GetAllStudentsCommand, GetAllStudentsResponse>
 {
