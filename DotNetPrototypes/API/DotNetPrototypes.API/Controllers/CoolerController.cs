@@ -27,7 +27,7 @@ public class CoolerController : ControllerBase
     [Route("GetAll")]
     public async Task<GetAllCoolersResponse> GetAll()
     {
-        var command = new GetAllCoolersCommand();
+        var command = new GetAllCoolersQuery();
         return await _mediator.Send(command);
     }
 }

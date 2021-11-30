@@ -4,7 +4,7 @@ using MediatR;
 
 namespace DotNetPrototypes.Core.UseCases.Coolers.GetAllCoolers;
 
-internal class GetAllCoolersHandler : IRequestHandler<GetAllCoolersCommand, GetAllCoolersResponse>
+internal class GetAllCoolersHandler : IRequestHandler<GetAllCoolersQuery, GetAllCoolersResponse>
 {
     private readonly ICoolerRepository _coolerRepository;
     private readonly IMapper _mapper;
@@ -15,7 +15,7 @@ internal class GetAllCoolersHandler : IRequestHandler<GetAllCoolersCommand, GetA
         _mapper = mapper;
     }
 
-    public async Task<GetAllCoolersResponse> Handle(GetAllCoolersCommand request, CancellationToken cancellationToken)
+    public async Task<GetAllCoolersResponse> Handle(GetAllCoolersQuery request, CancellationToken cancellationToken)
     {
         var coolers = await _coolerRepository.GetAll();
 

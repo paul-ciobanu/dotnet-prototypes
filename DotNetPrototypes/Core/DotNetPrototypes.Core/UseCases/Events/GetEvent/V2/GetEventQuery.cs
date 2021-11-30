@@ -1,7 +1,7 @@
-using MediatR;
+using DotNetPrototypes.Core.Interfaces.Requests;
 
 namespace DotNetPrototypes.Core.UseCases.Events.GetEvent.V2;
 
-public class GetEventQuery : IRequest<GetEventResponse>
+public class GetEventQuery : IQuery<GetEventResponse>
 {
 }

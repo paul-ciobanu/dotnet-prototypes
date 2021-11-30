@@ -4,7 +4,7 @@ using MediatR;
 
 namespace DotNetPrototypes.Core.UseCases.Students.GetAllStudents;
 
-internal class GetAllStudentsHandler : IRequestHandler<GetAllStudentsCommand, GetAllStudentsResponse>
+internal class GetAllStudentsHandler : IRequestHandler<GetAllStudentsQuery, GetAllStudentsResponse>
 {
     private readonly IStudentRepository _studentRepository;
     private readonly IMapper _mapper;
@@ -15,7 +15,7 @@ internal class GetAllStudentsHandler : IRequestHandler<GetAllStudentsCommand, Ge
         _mapper = mapper;
     }
 
-    public async Task<GetAllStudentsResponse> Handle(GetAllStudentsCommand request, CancellationToken cancellationToken)
+    public async Task<GetAllStudentsResponse> Handle(GetAllStudentsQuery request, CancellationToken cancellationToken)
     {
         var students = await _studentRepository.GetAll();
 

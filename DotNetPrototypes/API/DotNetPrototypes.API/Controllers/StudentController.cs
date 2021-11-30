@@ -35,7 +35,7 @@ public class StudentController : ControllerBase
     [Route("GetAll")]
     public async Task<GetAllStudentsResponse> GetAll()
     {
-        var command = new GetAllStudentsCommand();
+        var command = new GetAllStudentsQuery();
         return await _mediator.Send(command);
     }
 }
