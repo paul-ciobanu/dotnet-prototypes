@@ -8,3 +8,12 @@ services:
         environment:
             SA_PASSWORD: "Testing1234"
             ACCEPT_EULA: "Y"
+
+
+    mongodb_container:
+        image: mongo:latest
+        environment:
+          MONGO_INITDB_ROOT_USERNAME: "root"
+          MONGO_INITDB_ROOT_PASSWORD: "Testing1234"
+        ports:
+          - 27017:27017
